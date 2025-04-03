@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +66,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors
+				'royal-blue': '#1E40AF',
+				'royal-blue-light': '#3B82F6',
+				'royal-blue-lighter': '#60A5FA',
+				'forex-red': '#DC2626',
+				'forex-yellow': '#FBBF24',
+				'crypto-black': '#000000',
+				'crypto-yellow': '#FBBF24',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,25 +83,36 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out',
+				'slide-up': 'slide-up 0.7s ease-out',
+				'slide-in-right': 'slide-in-right 0.7s ease-out'
+			},
+			backgroundImage: {
+				'gradient-forex': 'linear-gradient(90deg, #DC2626, #FBBF24)',
+				'gradient-hero': 'linear-gradient(to right, rgba(30, 64, 175, 0.9), rgba(30, 64, 175, 0.7)), url("/hero-bg.jpg")'
 			}
 		}
 	},
